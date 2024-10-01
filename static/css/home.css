@@ -1,0 +1,116 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background-color: #f4f4f4; /* Light background */
+    color: #333; /* Dark text */
+    font-family: Arial, sans-serif; /* Font family */
+}
+
+/* Heading Styling */
+h2 {
+    margin: 20px 0; /* Space above and below headings */
+    font-size: 24px; /* Heading font size */
+}
+
+/* Product Section */
+.product-section {
+    position: relative; /* For positioning scroll buttons */
+    margin-bottom: 30px; /* Space below each product section */
+}
+
+/* Product List Container */
+.product-list {
+    display: flex; /* Flexbox for horizontal layout */
+    gap: 15px; /* Space between products */
+    overflow-x: auto; /* Horizontal scrolling if needed */
+    padding: 10px 0; /* Padding for the list */
+}
+
+/* Individual Product */
+.product {
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #fff; /* White background */
+    padding: 15px; /* Padding inside the product box */
+    width: 200px; /* Fixed width for each product */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex; /* Flexbox for internal layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transition effects for hover */
+}
+
+/* Hover Effects */
+.product:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Image Styling */
+.product img {
+    width: 100%; /* Full width of the product box */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 150px; /* Max height to keep uniformity */
+    border-radius: 5px; /* Rounded corners for images */
+    margin-bottom: 10px; /* Space below the image */
+}
+
+/* Product Title and Description */
+.product-title {
+    font-weight: bold; /* Bold title */
+    margin: 5px 0; /* Space around title */
+    text-align: center; /* Center text */
+}
+
+.product-price {
+    color: #007BFF; /* Blue color for price */
+    font-size: 18px; /* Font size for price */
+}
+
+/* Button Styling */
+.button {
+    background-color:rgb(15, 161, 15); /* Primary blue background */
+    color: #fff; /* White text */
+    padding: 10px 15px; /* Padding around button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background transition */
+    text-align: center; /* Center button text */
+    margin-top: auto; /* Push button to bottom */
+}
+
+.button:hover {
+    background-color: green; /* Darker blue on hover */
+}
+
+/* Scroll Buttons */
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Center the button vertically */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    z-index: 10; /* On top of product list */
+}
+
+.scroll-button.left {
+    left: -40px; /* Position to the left */
+}
+
+.scroll-button.right {
+    right: -40px; /* Position to the right */
+}
+
+.scroll-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker on hover */
+}

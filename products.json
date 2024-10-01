@@ -1,0 +1,44 @@
+[
+    {
+        "name" : "Carrot",
+        "price" : 2.50,
+        "description" : "Fresh carrots from organic farms.",
+        "category" : "vegetable" ,
+        "image_path" : "images/carrots.jpeg"
+    },
+    {
+        "name": "Tomato",
+        "price": 3.00,
+        "description": "Juicy red tomatoes.",
+        "category": "vegetable",
+        "image_path": "images/tomatoes.jpeg"
+    },
+    {
+        "name": "Apple",
+        "price": 1.50,
+        "description": "Sweet and crunchy apples.",
+        "category": "fruit",
+        "image_path": "images/apples.jpeg"
+    },
+    {
+        "name": "Banana",
+        "price": 1.20,
+        "description": "Fresh bananas, full of potassium.",
+        "category": "fruit",
+        "image_path": "images/banana.jpeg"
+    },
+    {
+        "name": "Milk",
+        "price": 4.50,
+        "description": "Full cream dairy milk.",
+        "category": "dairy",
+        "image_path": "images/milk.jpeg"
+    },
+    {
+        "name": "Cheese",
+        "price": 5.00,
+        "description": "Cheddar cheese blocks.",
+        "category": "dairy",
+        "image_path": "images/cheese.jpeg"
+    }
+]

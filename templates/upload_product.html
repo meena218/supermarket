@@ -1,0 +1,31 @@
+{% extends "admin_layout.html" %}
+
+{% block title %}Upload Product{% endblock %}
+
+{% block content %}
+<div class="upload-product">
+    <h2>Upload New Product</h2>
+    <form method="POST" enctype="multipart/form-data" action="{{ url_for('upload_product') }}">
+        <label for="name">Product Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+            <option value="vegetable">Vegetable</option>
+            <option value="fruit">Fruit</option>
+            <option value="dairy">Dairy</option>
+        </select>
+
+        <label for="image">Product Image:</label>
+        <input type="file" id="image" name="image" required>
+
+        <button type="submit">Upload Product</button>
+    </form>
+</div>
+{% endblock %}

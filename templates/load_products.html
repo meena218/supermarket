@@ -1,0 +1,23 @@
+{% extends "admin_layout.html" %}
+
+{% block title %}Load Products{% endblock %}
+
+{% block content %}
+    <h2>Load Products from JSON</h2>
+    
+    <form action="{{ url_for('load_products') }}" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="jsonFile">Upload Product JSON File:</label>
+            <input type="file" name="json_file" id="jsonFile" accept=".json" required>
+        </div>
+        <button type="submit" class="button">Upload Products</button>
+    </form>
+
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <div class="note">
+        <p><strong>Note:</strong> Ensure the JSON file is in the correct format with all required fields like name, price, description, category, and image file name.</p>
+    </div>
+{% endblock %}

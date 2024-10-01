@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+{% endblock %}
+{% block title %}Signup{% endblock %}
+{% block content %}
+<h2>Signup</h2>
+<form method="POST" action="{{ url_for('signup') }}">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    
+    <label for="pw">Password:</label>
+    <input type="password" id="pw" name="pw" required>
+    
+    <label for="secPw">Second Password:</label>
+    <input type="password" name="secPw" required>
+
+    <button type="submit" class="button">Signup</button>
+</form>
+{% endblock %}

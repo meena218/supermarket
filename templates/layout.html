@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+    {% block css %}
+    {% endblock  %}
+    
+    <title>{% block title %}SUPERMARKET{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>SuperM</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('cart') }}">Cart</a></li>
+                <li><a href="{{ url_for('contact') }}">ContactUs</a></li>
+                {% if not session.get('islogin') %} 
+                <li><a href="{{ url_for('signup') }}">Signup</a></li>
+                {% endif %}
+                {% if session.get('islogin' ) %}
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% else %}
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <script >
+        function scrollLeft(id) {
+            const element = document.getElementById(id);
+            element.scrollBy({ left: -200, behavior: 'smooth' });
+        }
+        
+        function scrollRight(id) {
+            const element = document.getElementById(id);
+            element.scrollBy({ left: 200, behavior: 'smooth' });
+        }
+        
+        function c(){
+            console.log("pressed");
+        }
+        </script>
+        
+        
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer>
+        <div class="contact-info">
+            <h4>Contact Information </h4>
+            <a href="{{ url_for('contact') }}">ContactUs</a>
+        </div>
+        <p>Branches : Telangana | Andhra Pradesh | Tirupati | Chennai | Tamil Nadu | Kerala </p>
+        <p>© 2024 Online Supermarket. All rights reserved.</p>
+    </footer>
+</body>
+</html>

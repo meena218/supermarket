@@ -1,0 +1,42 @@
+{% extends "admin_layout.html" %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<div class="admin-dashboard">
+    <h1>Welcome to the Admin Dashboard, {{ session['admin_username'] }}!</h1>
+    
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('upload_product') }}">Upload Product</a></li>
+            <li><a href="{{ url_for('load_products') }}">Load Products from JSON</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </nav>
+
+    <h2>Current Products</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>${{ product.price }}</td>
+            <td>{{ product.description }}</td>
+            <td>
+                <a href="{{ url_for('edit_product', product_id=product.id) }}">Edit</a>
+                <form action="{{ url_for('delete_product', product_id=product.id) }}" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
+
+

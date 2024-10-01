@@ -1,0 +1,22 @@
+{% extends "admin_layout.html" %}
+
+{% block title %}Admin Login{% endblock %}
+
+{% block content %}
+<div class="admin-login-container">
+    <h2>Admin Login</h2>
+    <form method="POST" action="{{ url_for('admin_login') }}">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+
+        {% if error %}
+            <p style="color:red;">{{ error }}</p>
+        {% endif %}
+    </form>
+</div>
+{% endblock %}

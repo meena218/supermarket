@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock  %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<h2>Vegetables</h2>
+<div class="product-section">
+    <button class="scroll-button left" onclick="scrollLeft('vegetable-list')">&#9664;</button>
+    <div class="product-list" id="vegetable-list">
+        {% for product in vegetables %}
+        <div class="product">
+            <img src="{{ url_for('product_image', product_id=product.id) }}" alt="{{ product.name }}">
+            <p class="product-title">{{ product.name }}</p>
+            <p class="product-price">${{ product.price }}</p>
+            <p class="product-description">{{ product.description }}</p>
+            <button class="button">Add to Cart</button>
+        </div>
+        {% endfor %}
+    </div>
+    <button class="scroll-button right" onclick="scrollRight('vegetable-list')">&#9654;</button>
+</div>
+
+<h2>Fruits</h2>
+<div class="product-section">
+    <button class="scroll-button left" onclick="scrollLeft('fruit-list')">&#9664;</button>
+    <div class="product-list" id="fruit-list">
+        {% for product in fruits %}
+        <div class="product">
+            <img src="{{ url_for('product_image', product_id=product.id) }}" alt="{{ product.name }}">
+            <p class="product-title">{{ product.name }}</p>
+            <p class="product-price">${{ product.price }}</p>
+            <p class="product-description">{{ product.description }}</p>
+            <button class="button">Add to Cart</button>
+        </div>
+        {% endfor %}
+    </div>
+    <button class="scroll-button right" onclick="scrollRight('fruit-list')">&#9654;</button>
+</div>
+
+<h2>Dairy Products</h2>
+<div class="product-section">
+    <button class="scroll-button left" onclick="scrollLeft('dairy-list')">&#9664;</button>
+    <div class="product-list" id="dairy-list">
+        {% for product in dairy %}
+        <div class="product">
+            <img src="{{ url_for('product_image', product_id=product.id) }}" alt="{{ product.name }}">
+            <p class="product-title">{{ product.name }}</p>
+            <p class="product-price">${{ product.price }}</p>
+            <p class="product-description">{{ product.description }}</p>
+            <button class="button">Add to Cart</button>
+        </div>
+        {% endfor %}
+    </div>
+    <button class="scroll-button right" onclick="scrollRight('dairy-list')">&#9654;</button>
+</div>
+
+{% endblock %}

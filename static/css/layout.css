@@ -1,0 +1,232 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+}
+
+/* Header Styling */
+header {
+    height: 80px;
+    background-color: forestgreen;
+    color: #fff;
+    text-align: center;
+    padding: 1px;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin-left: 40%;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 10px;
+    border: 10px saddlebrown;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+nav ul li a:hover {
+    background-color: #ccc; /* Lighter green on hover */
+    color: black; /* Black text color on hover */
+}
+
+/* Container for Main Content */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Product Section with Scroll Buttons */
+.product-section {
+    position: relative;
+    margin: 20px 0;
+}
+
+/* Product List Styling */
+.product-list-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.product-list {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+}
+
+.product {
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-right: 10px;
+    background-color: #fff;
+    width: 320px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    transition: transform 0.2s, 
+    box-shadow 0.2s;
+}
+.product-list::-webkit-scrollbar{
+    width: 0;
+}
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    width: 150%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.product-price {
+    color: #e67e22;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.product-description {
+    font-size: 0.9rem;
+    text-align: center;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Button Styling */
+.button {
+    display: block;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+/* Scroll Buttons */
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.scroll-button.left {
+    left: -10px; /* Position to the left of the product list */
+}
+
+.scroll-button.right {
+    right: -10px; /* Position to the right of the product list */
+}
+
+.scroll-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Footer Styling */
+footer {
+    background-color: forestgreen;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px; /* Space above the footer */
+}
+
+footer .contact-info {
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+/* Form Elements Styling */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+
+body::-webkit-scrollbar{
+    width:20px;
+}

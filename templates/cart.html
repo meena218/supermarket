@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}">
+{% endblock %}
+{% block title %}Shopping Cart{% endblock %}
+{% block content %}
+<h2>Your Cart</h2>
+<ul>
+    {% for item in cart %}
+    <li>
+        {{ item['name'] }} - ${{ item['price'] }}
+        <button class="button">Remove</button>
+    </li>
+    {% endfor %}
+</ul>
+<h3>Total: ${{ total }}</h3>
+<button class="button">Proceed to Checkout</button>
+{% endblock %}
